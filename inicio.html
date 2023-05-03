@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Menu Responsivo com checkbox</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+    content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="inicio.css">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+      width: 70%;
+      border-radius: 10px;
+      margin: 0 auto;
+      background-color: #fff;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .card-header {
+      background-color: #00435E;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 4px;
+      background-color: #f1f1f1;
+      font-size: 1rem;
+      color: #333;
+      transition: all 0.3s ease-in-out;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border: 2px solid #00435E;
+      background-color: #fff;
+    }
+
+    button[type="submit"] {
+      background-color: #00435E;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      padding: 10px;
+      width: 100%;
+      margin-top: 10px;
+      font-size: 1.1rem;
+      transition: all 0.3s ease-in-out;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #555;
+    }
+
+    button[type="submit"]:focus {
+      outline: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      .card {
+        width: 100%;
+      }
+    }
+
+    /*DELA TABLA*/
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 0 auto;
+      font-family: Arial, sans-serif;
+    }
+
+    thead {
+      background-color: #00435E;
+      color: #fff;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 8px;
+      border: 1px solid #ddd;
+      transition: background-color 0.3s ease;
+    }
+
+
+    tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tbody tr:nth-child(odd) {
+      background-color: #fff;
+    }
+
+    td.active {
+      background-color: #4CAF50;
+      color: #fff;
+    }
+
+    @media screen and (max-width: 600px) {
+      table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      thead,
+      tbody,
+      th,
+      td,
+      tr {
+        display: block;
+      }
+
+      thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+
+      td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+      }
+
+      td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+      }
+
+      td:nth-of-type(1):before {
+        content: "Nombre";
+      }
+
+      td:nth-of-type(2):before {
+        content: "Apellido";
+      }
+
+      td:nth-of-type(3):before {
+        content: "Edad";
+      }
+    }
+    .section{
+      width: 100%;
+      height: 100vh;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="content col-xs-12">
+    <header class="topo">
+      <h1 class="alinhaLeft">
+        <a href="index.html"><i class="fa fa-code"></i> SCOT </a>
+      </h1>
+      <input type="checkbox" id="control-nav" />
+      <label for="control-nav" class="control-nav"></label>
+      <label for="control-nav" class="control-nav-close"></label>
+
+      <nav class="alinhaRight">
+        <ul class="list-auto">
+          <li><a href="#clientes"><i class="fa fa-home"></i> Clientes</a></li>
+          <li><a href="#mascotas"><i class="fa fa-user"></i> Mascotas</a></li>
+          <li><a href="#reportes"><i class="fa fa-user"></i> Reportes</a></li>
+          <li><a href="#historialmedico"><i class="fa fa-code"></i> Historial Medico</a></li>
+          <li><a href="#proveedores"><i class="fa fa-envelope-o"></i> Proveedores</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+
+  <section id="mascotas">
+    <h2 class="titulo" id="">MASCOTAS</h2>
+    <div class="card">
+      <div class="card-header">
+        <h2>Formulario de registro mascotas</h2>
+      </div>
+      <div class="card-body">
+        <form>
+          <label for="nombre">Nombre del dueño:</label>
+          <input type="text" id="nombre" name="nombre" required>
+          <label for="nombre">Nombre de la mascota:</label>
+          <input type="text" id="nombre" name="nombre" required>
+          <label for="nombre">Raza:</label>
+          <input type="text" id="nombre" name="nombre" required>
+          <label for="mensaje">Consulta que realizo:</label>
+          <textarea id="mensaje" name="mensaje" required></textarea>
+          <button type="submit">Registrar</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <hr>
+  <section id="historialmedico">
+    <h2 class="titulo" id="">HISTORIAL MEDICO</h2>
+    <div class="card">
+      <div class="card-header">
+        <h2>Historial Medico</h2>
+      </div>
+      <div class="card-body">
+        <form>
+          <label for="nombre">Nombre del dueño:</label> Jose Perez
+          <label for="nombre">Nombre de la mascota:</label> PepeLucho
+          <label for="nombre">Raza:</label> Chapi
+          <table>
+            <thead>
+              <tr>
+                <th>Mascota</th>
+                <th>Veterinario</th>
+                <th>Consulta</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Pelusa</td>
+                <td>Doe</td>
+                <td>Desparacitacion</td>
+              </tr>
+              <tr>
+                <td>Pelusa</td>
+                <td>Smith</td>
+                <td>Inyeccion Octavalente</td>
+              </tr>
+              <tr>
+                <td>Oslo</td>
+                <td>Johnson</td>
+                <td>Vacuna contra la Ravia</td>
+              </tr>
+            </tbody>
+          </table>
+          <button type="submit">Imprimir Reporte</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <hr>
+  <section id="clientes">
+    <h2 class="titulo" id="">CLIENTES</h2>
+    <div class="card">
+      <div class="card-header">
+        <h2>Formulario de Cliente</h2>
+      </div>
+      <div class="card-body">
+        <form>
+          <label for="nombre">Nombre del dueño:</label>
+          <input type="text" id="nombre" name="nombre" required>
+          <label for="nombre">Apellido Paterno:</label>
+          <input type="text" id="nombre" name="nombre" required>
+          <label for="nombre">Direccion:</label>
+          <input type="text" id="nombre" name="nombre" required>
+          <label for="mensaje">Telefono:</label>
+          <textarea id="mensaje" name="mensaje" required></textarea>
+          <button type="submit">Registrar</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <hr>
+  <section id="proveedores">
+    <h2 class="titulo" id="">PROVEEDORES</h2>
+    <div class="card">
+      <div class="card-header">
+        <h2>Formulario de Registro Proveedor</h2>
+      </div>
+      <div class="card-body">
+        <form>
+          <label for="nombre">Nombre del Proveedor:</label>
+          <input type="text" id="nombre" name="nombre" required>
+          <label for="nombre">Descripcion:</label>
+          <input type="text" id="nombre" name="nombre" required>
+          <label for="mensaje">Telefono:</label>
+          <textarea id="mensaje" name="mensaje" required></textarea>
+          <label for="nombre">Link:</label>
+          <input type="text" id="nombre" name="nombre" required>
+          <button type="submit">Registrar</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <br><br><br><br><br>
+
+</body>
+
+</html>
